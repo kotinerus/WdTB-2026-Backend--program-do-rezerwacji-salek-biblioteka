@@ -19,3 +19,11 @@ insert into building (name, address, city, postal_code) values
     ('Centrum Informatyczne', 'ul. Fabryczna 10',    'Wrocław', '53-609'),
     ('Czytelnia Akademicka',  'ul. Ostrowskiego 22', 'Wrocław', '53-238');
 
+-- ===== LAB 02 · room =====
+-- Klucz obcy do budynku dojdzie na kolejnych zajęciach
+insert into room (name, capacity, floor, room_type) values
+    ('Cicha 101',          6,  1, 'SILENT_STUDY'),
+    ('Grupowa 2.04',       10, 2, 'GROUP_STUDY'),
+    ('Pracownia IT',       20, 0, 'COMPUTER_LAB'),
+    ('Sala konferencyjna', 30, 3, 'CONFERENCE');
+
