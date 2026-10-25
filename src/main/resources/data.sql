@@ -27,3 +27,11 @@ insert into room (name, capacity, floor, room_type) values
     ('Pracownia IT',       20, 0, 'COMPUTER_LAB'),
     ('Sala konferencyjna', 30, 3, 'CONFERENCE');
 
+-- ===== LAB 02 · reservation =====
+-- Kolumny modification_date i modified_by pochodzą z klasy wbudowanej ModificationInfo.
+-- Klucze obce do salki i użytkownika (UserAccount) dojdą na kolejnych zajęciach
+insert into reservation (start_time, end_time, status, note, modification_date, modified_by) values
+    (timestamp '2026-11-02 10:00:00', timestamp '2026-11-02 12:00:00', 'CONFIRMED', 'Nauka do kolokwium',           current_timestamp, 'ola@student.merito.pl'),
+    (timestamp '2026-11-03 14:00:00', timestamp '2026-11-03 16:00:00', 'PENDING',   'Praca grupowa nad projektem', current_timestamp, 'kuba@student.merito.pl'),
+    (timestamp '2026-11-04 09:00:00', timestamp '2026-11-04 10:00:00', 'CANCELLED', null,                          current_timestamp, 'ola@student.merito.pl');
+
