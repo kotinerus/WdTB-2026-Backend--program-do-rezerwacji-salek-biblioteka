@@ -12,3 +12,10 @@ insert into user_account (email, display_name, role, created_at) values
          ('artur.lazanowski@student.merito.pl', 'Artur', 'USER',   current_timestamp),
          ('aleksander.luczycki@student.merito.pl', 'Aleksander', 'USER',   current_timestamp),
          ('krzysztof.wysocki@student.merito.pl', 'Krzysztof', 'USER',   current_timestamp);
+
+-- ===== LAB 02 · building =====
+insert into building (name, address, city, postal_code) values
+    ('Biblioteka Główna',     'ul. Fabryczna 29-31', 'Wrocław', '53-609'),
+    ('Centrum Informatyczne', 'ul. Fabryczna 10',    'Wrocław', '53-609'),
+    ('Czytelnia Akademicka',  'ul. Ostrowskiego 22', 'Wrocław', '53-238');
+
