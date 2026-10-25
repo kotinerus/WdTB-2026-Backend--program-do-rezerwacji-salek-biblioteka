@@ -35,3 +35,9 @@ insert into reservation (start_time, end_time, status, note, modification_date, 
     (timestamp '2026-11-03 14:00:00', timestamp '2026-11-03 16:00:00', 'PENDING',   'Praca grupowa nad projektem', current_timestamp, 'kuba@student.merito.pl'),
     (timestamp '2026-11-04 09:00:00', timestamp '2026-11-04 10:00:00', 'CANCELLED', null,                          current_timestamp, 'ola@student.merito.pl');
 
+-- ===== LAB 02 · notification =====
+-- Adresat to e-mail z user_account, bez klucza obcego
+insert into notification (user_to, message, template, created_at) values
+    ('ola@student.merito.pl',  'Rezerwacja salki Cicha 101 została potwierdzona.',      'RESERVATION_CONFIRMED', current_timestamp),
+    ('kuba@student.merito.pl', 'Rezerwacja salki Grupowa 2.04 czeka na potwierdzenie.', 'RESERVATION_PENDING',   current_timestamp),
+    ('ola@student.merito.pl',  'Rezerwacja z 4 listopada została anulowana.',           'RESERVATION_CANCELLED', current_timestamp);
