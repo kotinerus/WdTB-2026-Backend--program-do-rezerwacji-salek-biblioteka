@@ -1,13 +1,9 @@
 package pl.wsb.biblioteka.room.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Salka do rezerwacji. Na razie bez klucza obcego do {@link Building}: relacja dojdzie na kolejnych zajęciach.
@@ -32,6 +28,16 @@ public class Room {
     @Enumerated(EnumType.STRING)
     @Column(name = "room_type", nullable = false, length = 20)
     private RoomType type;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "building_id", nullable = false)
+    private Building building;
+
+    @ManyToMany
+    @JoinTable(name = "room_equipment",
+            joinColumns = @JoinColumn(name = "room_id"),
+            inverseJoinColumns = @JoinColumn(name = "equipment_id"))
+    private Set<Equipment> equipment = new HashSet<>();
 
     protected Room() {
     }

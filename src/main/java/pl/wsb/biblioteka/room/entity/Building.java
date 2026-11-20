@@ -1,11 +1,9 @@
 package pl.wsb.biblioteka.room.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Budynek, w którym mogą znajdować się salki. Na razie bez relacji z {@link Room}: dojdzie na kolejnych zajęciach.
@@ -29,6 +27,11 @@ public class Building {
 
     @Column(name = "postal_code", nullable = false, length = 10)
     private String postalCode;
+
+    @OneToMany(mappedBy = "building")
+    private List<Room> rooms = new ArrayList<>();
+
+    public List<Room> getRooms() { return rooms; }
 
     protected Building() {
     }
