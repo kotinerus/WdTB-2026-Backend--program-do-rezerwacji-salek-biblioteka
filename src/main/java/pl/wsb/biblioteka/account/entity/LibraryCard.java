@@ -1,4 +1,4 @@
-package pl.wsb.biblioteka.entity;
+package pl.wsb.biblioteka.account.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
